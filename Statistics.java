@@ -10,8 +10,10 @@ public class Statistics {
 class UserStats extends Statistics
 {
     //creates arrays that stores user data
+    //no need to override anything
     double[] statParse = new double[3];
     boolean[] comparisonCheck = new boolean[3];
+    double[] gunplayStats = new double[3];
 
         public void getUtilityUsage(double s, double b, double t)
         {
@@ -39,6 +41,8 @@ class UserStats extends Statistics
 
         public void utilitySuggestion()
         {
+            //loops to check the contents of the boolean array for stat comparisons
+            //produces strings that depend on the trues and falses
             String responseA = "Improve your smoke usage to better zone off the map for your team.";
             String responseB = "Use your blind more to displace enemies and set up successful fights for your teammates.";
             String responseC = "Get more positional value by using your teleports to quickly set yourself up in stronger angles.";
