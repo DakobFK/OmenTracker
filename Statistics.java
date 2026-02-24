@@ -1,10 +1,13 @@
+import java.util.*;
+
 public class Statistics {
     //this is going to the standard that the user's stats are held to
     //a lot of arrays so i dont have to write a billion lines
-    final double smokeExpect = 2.1;
-    final double blindExpect = 0.8;
-    final double teleportExpect = 0.6;
+    final double smokeExpect = 2.0;
+    final double blindExpect = 0.6;
+    final double teleportExpect = 0.4;
     final double[] stats = {smokeExpect, blindExpect, teleportExpect};
+    final double gunExpect = 1.0;
 }
 
 class UserStats extends Statistics
@@ -43,16 +46,16 @@ class UserStats extends Statistics
         {
             //loops to check the contents of the boolean array for stat comparisons
             //produces strings that depend on the trues and falses
-            String responseA = "Improve your smoke usage to better zone off the map for your team.";
-            String responseB = "Use your blind more to displace enemies and set up successful fights for your teammates.";
-            String responseC = "Get more positional value by using your teleports to quickly set yourself up in stronger angles.";
-            String[] responses = {responseA, responseB, responseC};
+            HashMap<Integer, String> statResponse = new HashMap<>();
+            statResponse.put(0, "Improve your smoke usage to better zone off the map for your team.");
+            statResponse.put(1, "Use your blind more to displace enemies and set up successful fights for your teammates.");
+            statResponse.put(2, "Get more positional value by using your teleports to quickly set yourself up in stronger angles.");
 
             for(int r = 0; r < statParse.length; r++)
             {
                 if(comparisonCheck[r] == false)
                 {
-                    System.out.println(responses[r]);
+                    System.out.println(statResponse.get(r));
                 }
             }
             if(comparisonCheck[0] == true && comparisonCheck[1] == true && comparisonCheck[2] == true)
